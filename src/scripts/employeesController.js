@@ -1,4 +1,4 @@
-dashboardApp.controller("employeesController",function($scope,$http, $timeout){
+dashboardApp.controller("employeesController",['$scope','$http', '$timeout',function($scope,$http, $timeout){
 
 	$scope.markers = '';
 
@@ -32,4 +32,4 @@ dashboardApp.controller("employeesController",function($scope,$http, $timeout){
     center: { latitude: 39.8282, longitude: -98.5795 }, 
     zoom: 2
   };
-});
+}]);

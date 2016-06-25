@@ -9,7 +9,7 @@ var dashboardApp = angular.module('dashboardApp', ['ngRoute', 'ngResource', 'zin
 
 
 
-dashboardApp.controller("employeesController",function($scope,$http, $timeout){
+dashboardApp.controller("employeesController",['$scope','$http', '$timeout',function($scope,$http, $timeout){
 
 	$scope.markers = '';
 
@@ -43,7 +43,7 @@ dashboardApp.controller("employeesController",function($scope,$http, $timeout){
     center: { latitude: 39.8282, longitude: -98.5795 }, 
     zoom: 2
   };
-});
+}]);
 dashboardApp.controller('issuesController', ['$scope',  '$resource', "$timeout", function($scope, $resource, $timeout){
 
   	$scope.orderByField = 'closed_timestamp';
@@ -323,7 +323,7 @@ dashboardApp.controller('keyMetricsController',  [ '$scope', '$resource', '$rout
 };
 
 }])
-dashboardApp.config(function($routeProvider){
+dashboardApp.config(['$routeProvider',function($routeProvider){
 	$routeProvider
 	.when('/', {
 		templateUrl: '/assets/issues.htm', 
@@ -337,4 +337,4 @@ dashboardApp.config(function($routeProvider){
 		templateUrl: '/assets/employees.htm', 
 		controller: 'employeesController'
 	})
-})
+}])

@@ -1,4 +1,4 @@
-dashboardApp.config(function($routeProvider){
+dashboardApp.config(['$routeProvider',function($routeProvider){
 	$routeProvider
 	.when('/', {
 		templateUrl: '/assets/issues.htm', 
@@ -12,4 +12,4 @@ dashboardApp.config(function($routeProvider){
 		templateUrl: '/assets/employees.htm', 
 		controller: 'employeesController'
 	})
-})
+}])

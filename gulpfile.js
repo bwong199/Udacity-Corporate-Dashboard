@@ -8,6 +8,7 @@ var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
 var clean = require('gulp-clean');
 // include plug-ins
+var rename = require('gulp-rename'); 
 var jshint = require('gulp-jshint');
 var autoprefix = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
@@ -67,14 +68,22 @@ gulp.src("./src/*.ejs")
 //     .pipe(gulp.dest('./build/scripts/'));
 // });
 
-gulp.task('scripts', function(){
+// gulp.task('scripts', function(){
+//     return gulp.src('./src/scripts/*.js')
+//         .pipe(concat('all.js'))
+//         .pipe(uglify())
+//         .pipe(gulp.dest('./build/scripts/'));
+// });
+
+
+gulp.task('scripts', function() {  
     return gulp.src('./src/scripts/*.js')
         .pipe(concat('all.js'))
         .pipe(gulp.dest('./build/scripts/'))
+        .pipe(rename('scripts.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./build/scripts/'));
 });
-
 
 
 gulp.task('styles', function() {

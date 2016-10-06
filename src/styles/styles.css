@@ -3,7 +3,7 @@ html, body, input, select, textarea
     font-size: 1.05em !important;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,800);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,800);
 .angular-google-map-container {
         height: 400px;
 }
